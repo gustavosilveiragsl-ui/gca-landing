@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GCA Sistema — Gestão de Almoxarifado Moderna</title>
+<meta name="description" content="Sistema moderno de gestão de almoxarifado. Controle de EPIs, materiais, equipes e laudos em uma plataforma integrada.">
+<link rel="icon" type="image/png" href="https://i.postimg.cc/hvM5wcMw/LOGOTIPO-GCA.png">
+<link rel="apple-touch-icon" href="https://i.postimg.cc/hvM5wcMw/LOGOTIPO-GCA.png">
+<meta property="og:title" content="GCA Sistema">
+<meta property="og:description" content="Gestão de Almoxarifado Moderna">
+<meta property="og:image" content="https://i.postimg.cc/hvM5wcMw/LOGOTIPO-GCA.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#0a0e1a;color:#e2e8f0;overflow-x:hidden}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{width:36px;height:36px;border-radius:8px}
+.nav-brand{font-size:18px;font-weight:600;color:#fff;letter-spacing:-.3px}
+.nav-links{display:flex;gap:28px}
+.nav-link{font-size:14px;color:#64748b;cursor:pointer;text-decoration:none}
+.nav-link:hover{color:#e2e8f0}
+.nav-cta{background:#6366f1;color:#fff;border:none;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none}
+.nav-cta:hover{background:#4f46e5}
+/* HERO */
+.hero{text-align:center;padding:80px 24px 56px}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);color:#818cf8;font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;margin-bottom:28px}
+.hero-badge span{width:6px;height:6px;background:#6366f1;border-radius:50%;display:inline-block}
+.hero h1{font-size:52px;font-weight:700;line-height:1.12;letter-spacing:-1.5px;color:#fff;max-width:740px;margin:0 auto 20px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#6366f1,#818cf8,#a5b4fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:18px;color:#94a3b8;max-width:540px;margin:0 auto 40px;line-height:1.6}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#6366f1;color:#fff;border:none;padding:13px 28px;border-radius:9px;font-size:15px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn-primary:hover{background:#4f46e5}
+.btn-ghost{background:transparent;color:#94a3b8;border:1px solid rgba(255,255,255,.12);padding:13px 28px;border-radius:9px;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+.btn-ghost:hover{border-color:rgba(255,255,255,.25);color:#e2e8f0}
+/* CLIENTS */
+.clients{padding:40px 48px;border-top:1px solid rgba(255,255,255,.05);text-align:center}
+.clients-label{font-size:12px;color:#475569;letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px}
+.client-logo{font-size:14px;font-weight:600;color:#334155;letter-spacing:1px;text-transform:uppercase}
+/* SECTION */
+.section{padding:64px 48px}
+.section-label{text-align:center;font-size:12px;color:#6366f1;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.section-title{text-align:center;font-size:34px;font-weight:700;color:#fff;letter-spacing:-.8px;margin-bottom:10px}
+.section-sub{text-align:center;font-size:15px;color:#64748b;max-width:500px;margin:0 auto 48px;line-height:1.6}
+.modules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.mod{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:22px 20px;transition:border-color .2s}
+.mod:hover{border-color:rgba(99,102,241,.35)}
+.mod-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px}
+.mod-title{font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:5px}
+.mod-desc{font-size:12px;color:#64748b;line-height:1.5}
+/* FEATURES */
+.features{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:48px 48px;border-top:1px solid rgba(255,255,255,.06)}
+.feat-list{display:flex;flex-direction:column;gap:22px}
+.feat-item{display:flex;gap:14px}
+.feat-dot{width:32px;height:32px;border-radius:8px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
+.feat-title{font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:3px}
+.feat-desc{font-size:13px;color:#64748b;line-height:1.5}
+/* CTA */
+.cta-section{text-align:center;padding:80px 48px;border-top:1px solid rgba(255,255,255,.06)}
+.cta-section h2{font-size:38px;font-weight:700;color:#fff;letter-spacing:-.8px;margin-bottom:14px}
+.cta-section p{color:#64748b;font-size:16px;margin-bottom:36px;max-width:440px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.06);padding:24px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-brand{font-size:13px;color:#334155}
+.footer-link{font-size:13px;color:#334155;text-decoration:none}
+@media(max-width:768px){
+  .nav{padding:16px 20px}.nav-links{display:none}
+  .hero h1{font-size:34px}.hero-sub{font-size:16px}
+  .features{grid-template-columns:1fr}.feat-visual{display:none}
+  .section{padding:48px 20px}.footer{padding:20px;flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="https://i.postimg.cc/hvM5wcMw/LOGOTIPO-GCA.png" alt="GCA">
+    <span class="nav-brand">GCA Sistema</span>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link" href="#modulos">Módulos</a>
+    <a class="nav-link" href="#diferenciais">Diferenciais</a>
+    <a class="nav-link" href="#contato">Contato</a>
+  </div>
+  <a class="nav-cta" href="https://app.gcasistema.com.br">Sou cliente →</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge"><span></span> Gestão de almoxarifado moderna</div>
+  <h1>O sistema que seu<br>almoxarifado <em>precisava</em></h1>
+  <p class="hero-sub">Controle de EPIs, materiais, equipes e laudos em uma plataforma integrada. Do atendimento ao colaborador até o relatório gerencial.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="#contato">Quero conhecer →</a>
+    <a class="btn-ghost" href="https://app.gcasistema.com.br">Já sou cliente</a>
+  </div>
+</section>
+
+<div class="clients">
+  <div class="clients-label">Empresas que confiam no GCA</div>
+  <span class="client-logo">Ceneged</span>
+</div>
+
+<section class="section" id="modulos">
+  <div class="section-label">Módulos</div>
+  <div class="section-title">Tudo em um único sistema</div>
+  <div class="section-sub">Cada empresa usa o que precisa. Ative por módulo, configure por unidade.</div>
+  <div class="modules">
+    <div class="mod"><div class="mod-icon" style="background:rgba(99,102,241,.15)">🤝</div><div class="mod-title">Atendimento EPI</div><div class="mod-desc">Entrega com assinatura digital, ficha automática e histórico completo</div></div>
+    <div class="mod"><div class="mod-icon" style="background:rgba(14,165,233,.15)">📦</div><div class="mod-title">Controle de Estoque</div><div class="mod-desc">Entradas, saídas, transferências e saldo em tempo real por armazém</div></div>
+    <div class="mod"><div class="mod-icon" style="background:rgba(16,185,129,.15)">🧰</div><div class="mod-title">Materiais Cliente</div><div class="mod-desc">Gestão de materiais terceiros com controle por equipe e OS</div></div>
+    <div class="mod"><div class="mod-icon" style="background:rgba(245,158,11,.15)">⚡</div><div class="mod-title">Laudos e NR-10</div><div class="mod-desc">Rastreamento de ferramentas com alertas automáticos de vencimento</div></div>
+    <div class="mod"><div class="mod-icon" style="background:rgba(239,68,68,.15)">🔖</div><div class="mod-title">Gestão de Sucata</div><div class="mod-desc">Paletes, manifestos e controle de descarte com PDF automático</div></div>
+    <div class="mod"><div class="mod-icon" style="background:rgba(168,85,247,.15)">📊</div><div class="mod-title">Indicadores</div><div class="mod-desc">Dashboards, relatórios e alertas para a gestão do almoxarifado</div></div>
+  </div>
+</section>
+
+<div class="features" id="diferenciais">
+  <div>
+    <div class="section-label" style="text-align:left;margin-bottom:10px">Por que o GCA</div>
+    <div style="font-size:28px;font-weight:700;color:#fff;letter-spacing:-.6px;line-height:1.25;margin-bottom:28px">Construído para<br>quem trabalha<br>no campo</div>
+    <div class="feat-list">
+      <div class="feat-item"><div class="feat-dot">📱</div><div><div class="feat-title">Funciona como app</div><div class="feat-desc">Instale no celular ou tablet — iOS e Android — sem app store</div></div></div>
+      <div class="feat-item"><div class="feat-dot">🏢</div><div><div class="feat-title">Multiunidade e multicliente</div><div class="feat-desc">Cada empresa tem seus dados isolados, com controle por filial</div></div></div>
+      <div class="feat-item"><div class="feat-dot">🔐</div><div><div class="feat-title">Permissões granulares</div><div class="feat-desc">Defina o acesso de cada usuário por módulo e armazém</div></div></div>
+      <div class="feat-item"><div class="feat-dot">☁️</div><div><div class="feat-title">100% na nuvem</div><div class="feat-desc">Sem instalação, sem servidor local, atualizações automáticas</div></div></div>
+    </div>
+  </div>
+  <div style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:24px">
+    <div style="display:flex;gap:6px;margin-bottom:16px">
+      <div style="width:10px;height:10px;border-radius:50%;background:#ef4444"></div>
+      <div style="width:10px;height:10px;border-radius:50%;background:#f59e0b"></div>
+      <div style="width:10px;height:10px;border-radius:50%;background:#22c55e"></div>
+    </div>
+    <div style="height:8px;width:50%;background:rgba(99,102,241,.35);border-radius:4px;margin-bottom:8px"></div>
+    <div style="height:8px;width:75%;background:rgba(255,255,255,.07);border-radius:4px;margin-bottom:8px"></div>
+    <div style="height:8px;width:90%;background:rgba(255,255,255,.07);border-radius:4px;margin-bottom:14px"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:10px"><div style="height:6px;width:55%;background:rgba(99,102,241,.4);border-radius:3px;margin-bottom:7px"></div><div style="height:5px;background:rgba(255,255,255,.06);border-radius:3px"></div></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:10px"><div style="height:6px;width:55%;background:rgba(16,185,129,.4);border-radius:3px;margin-bottom:7px"></div><div style="height:5px;background:rgba(255,255,255,.06);border-radius:3px"></div></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:10px"><div style="height:6px;width:55%;background:rgba(245,158,11,.4);border-radius:3px;margin-bottom:7px"></div><div style="height:5px;background:rgba(255,255,255,.06);border-radius:3px"></div></div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:10px"><div style="height:6px;width:55%;background:rgba(239,68,68,.3);border-radius:3px;margin-bottom:7px"></div><div style="height:5px;background:rgba(255,255,255,.06);border-radius:3px"></div></div>
+    </div>
+  </div>
+</div>
+
+<section class="cta-section" id="contato">
+  <img src="https://i.postimg.cc/hvM5wcMw/LOGOTIPO-GCA.png" style="width:56px;height:56px;border-radius:14px;margin:0 auto 20px;display:block" alt="GCA">
+  <h2>Pronto para modernizar<br>seu almoxarifado?</h2>
+  <p>Entre em contato e veja o GCA funcionando na sua operação.</p>
+  <div class="cta-btns">
+    <a class="btn-primary" href="mailto:contato@gcasistema.com.br" style="font-size:16px;padding:14px 32px">Falar com a equipe →</a>
+    <a class="btn-ghost" href="https://app.gcasistema.com.br" style="font-size:16px;padding:14px 32px">Já sou cliente</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <span class="footer-brand">© 2026 GCA Sistema</span>
+  <a class="footer-link" href="https://app.gcasistema.com.br">app.gcasistema.com.br</a>
+</footer>
+
+</body>
+</html>
